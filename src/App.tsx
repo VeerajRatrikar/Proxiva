@@ -17,15 +17,17 @@ import AdminDashboard from './pages/AdminDashboard';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/community-deals" element={<CommunityDealsPage />} />
+            <Route path="/start-deal" element={<CommunityDealsPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/trust-safety" element={<AboutPage />} />
             <Route path="/help" element={<HelpPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
@@ -33,7 +35,6 @@ function App() {
             <Route path="/book" element={<BookTaskPage />} />
             <Route path="/dashboard" element={<CustomerDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
-            {/* Additional routes will go here */}
           </Routes>
         </main>
         <Footer />
