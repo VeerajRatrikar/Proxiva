@@ -1,48 +1,55 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, MapPin, Search } from 'lucide-react';
-import { useState } from 'react';
+import { Shield, Radar, Menu, X, ArrowRight } from 'lucide-react';
 
-const Navbar = () => {
+export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-proxiva-blue rounded-xl flex items-center justify-center text-white font-bold text-2xl italic tracking-tighter">
-              P
+          
+          {/* Left: Logo */}
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-secondary to-blue-100 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <Shield className="w-6 h-6 text-brand-primary" strokeWidth={2.5} />
             </div>
-            <span className="font-bold text-2xl tracking-tight text-proxiva-navy">PROXIVA</span>
+            <span className="font-bold text-xl tracking-tight text-brand-navy">PROXIVA</span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/services" className="text-slate-600 hover:text-proxiva-blue font-medium transition-colors">Services</Link>
-            <Link to="/community-deals" className="text-slate-600 hover:text-proxiva-blue font-medium transition-colors">Community Deals</Link>
-            <Link to="/how-it-works" className="text-slate-600 hover:text-proxiva-blue font-medium transition-colors">How It Works</Link>
-            <Link to="/pricing" className="text-slate-600 hover:text-proxiva-blue font-medium transition-colors">Pricing</Link>
-          </nav>
+          {/* Center: Nav Links (Desktop) */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Home</Link>
+            <Link to="/services" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Services</Link>
+            <Link to="/community-deals" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Community Deals</Link>
+            <Link to="/#how-it-works" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">How It Works</Link>
+            <Link to="/pricing" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Pricing</Link>
+            <Link to="/about" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">About</Link>
+            <Link to="/help" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Help</Link>
+          </div>
 
-          {/* Desktop Right Actions */}
-          <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center text-slate-500 text-sm">
-              <MapPin className="w-4 h-4 mr-1 text-proxiva-blue" />
-              Bengaluru
-            </div>
-            <div className="h-6 w-px bg-slate-200"></div>
-            <Link to="/track" className="text-slate-600 hover:text-proxiva-blue font-medium transition-colors flex items-center">
-              <Search className="w-4 h-4 mr-1" /> Track
+          {/* Right: Actions (Desktop) */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link to="/track" className="flex items-center text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">
+              <Radar className="w-4 h-4 mr-1.5" />
+              Track Task
             </Link>
-            <Link to="/login" className="text-slate-600 hover:text-proxiva-blue font-medium transition-colors">Login</Link>
-            <Link to="/book" className="btn-primary py-2 px-5 text-sm">Book Now</Link>
+            <Link to="/login" className="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors px-3 py-2">
+              Login
+            </Link>
+            <Link to="/book" className="bg-brand-primary hover:bg-blue-700 text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors flex items-center">
+              Book Now
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-slate-600 hover:text-proxiva-navy focus:outline-none">
-              <Menu className="w-6 h-6" />
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-slate-600 hover:text-slate-900 p-2"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -50,20 +57,25 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-100">
-          <div className="px-4 pt-2 pb-6 space-y-4">
-            <Link to="/services" className="block text-slate-600 hover:text-proxiva-blue font-medium">Services</Link>
-            <Link to="/community-deals" className="block text-slate-600 hover:text-proxiva-blue font-medium">Community Deals</Link>
-            <Link to="/how-it-works" className="block text-slate-600 hover:text-proxiva-blue font-medium">How It Works</Link>
-            <Link to="/pricing" className="block text-slate-600 hover:text-proxiva-blue font-medium">Pricing</Link>
-            <div className="border-t border-slate-100 pt-4 mt-4">
-              <Link to="/login" className="block text-slate-600 hover:text-proxiva-blue font-medium mb-4">Login</Link>
-              <Link to="/book" className="block text-center btn-primary w-full">Book Now</Link>
-            </div>
+        <div className="md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-1 shadow-lg absolute w-full left-0">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary rounded-lg">Home</Link>
+          <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary rounded-lg">Services</Link>
+          <Link to="/community-deals" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary rounded-lg">Community Deals</Link>
+          <Link to="/#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary rounded-lg">How It Works</Link>
+          <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary rounded-lg">Pricing</Link>
+          <hr className="my-2 border-gray-100" />
+          <Link to="/track" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+            <Radar className="w-5 h-5 mr-3 text-slate-400" /> Track Task
+          </Link>
+          <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Login</Link>
+          <div className="mt-4 px-3">
+            <Link to="/book" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex justify-center items-center bg-brand-primary hover:bg-blue-700 text-white font-medium py-3 rounded-full transition-colors">
+              Book Now <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 };
 

@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+@theme {
+  --color-brand-primary: #2563EB;
+  --color-brand-secondary: #EFF6FF;
+  --color-brand-navy: #0B132B;
+  --color-brand-navy-dark: #050A18;
+  --color-brand-navy-light: #0F172A;
+  --color-brand-success: #16A34A;
+  --color-brand-indigo: #4F46E5;
+  --color-brand-gray: #F8FAFC;
+}
+
 @layer base {
   body {
     @apply text-slate-900 bg-white antialiased font-sans;
