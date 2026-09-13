@@ -78,13 +78,13 @@ export default function HomePage() {
               {/* Main Card Container */}
               <div className="bg-white rounded-3xl p-5 shadow-xl border border-slate-100 relative">
                 {/* Simulated Map Container */}
-                <div className="bg-[#0B1528] rounded-2xl h-64 relative overflow-hidden p-4 mb-5 border border-slate-800">
+                <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-500 rounded-2xl h-64 relative overflow-hidden p-4 mb-5 border border-blue-700/50">
                   {/* Grid Lines */}
-                  <div className="absolute inset-0 opacity-15" style={{ backgroundImage: 'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
                   
                   {/* Route dashed curve */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-48 h-36 border-2 border-blue-500/30 border-dashed rounded-full transform -rotate-12" />
+                    <div className="w-48 h-36 border-2 border-white/40 border-dashed rounded-full transform -rotate-12" />
                   </div>
 
                   {/* Top-Left Location Tag */}
@@ -525,7 +525,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. TRUST & SAFETY */}
-      <section className="py-20 bg-[#0B1528] text-white">
+      <section className="py-20 bg-[#0A192F] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             

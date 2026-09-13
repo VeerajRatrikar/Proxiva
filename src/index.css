@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@config "../tailwind.config.js";
 
 @theme {
   --color-brand-primary: #2563EB;
@@ -12,23 +11,69 @@
   --color-brand-gray: #F8FAFC;
 }
 
-@layer base {
-  body {
-    @apply text-slate-900 bg-white antialiased font-sans;
-  }
+body {
+  color: var(--color-slate-900, #0f172a);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-proxiva-blue text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors duration-200;
+    background-color: var(--color-brand-primary, #2563EB);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  .btn-primary:hover {
+    background-color: #1d4ed8;
   }
   .btn-secondary {
-    @apply bg-proxiva-light text-proxiva-navy px-6 py-3 rounded-full font-medium hover:bg-slate-200 transition-colors duration-200;
+    background-color: #f1f5f9;
+    color: var(--color-brand-navy, #0B132B);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  .btn-secondary:hover {
+    background-color: #e2e8f0;
   }
   .card-premium {
-    @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-200;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+  }
+  .card-premium:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 640px) {
+    .section-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
