@@ -15,10 +15,11 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-blue-700 flex items-center justify-center shadow-sm">
-              <span className="text-white font-black text-lg leading-none tracking-tighter">p</span>
-            </div>
-            <span className="font-extrabold text-lg tracking-tight text-slate-900">PROXIVA</span>
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+              <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#2563EB"/>
+              <path fillRule="evenodd" clipRule="evenodd" d="M11 9H17.5C21.0899 9 24 11.9101 24 15.5C24 19.0899 21.0899 22 17.5 22H11V9ZM14 12V19H17.5C19.433 19 21 17.433 21 15.5C21 13.567 19.433 12 17.5 12H14Z" fill="white"/>
+            </svg>
+            <span className="font-extrabold text-xl tracking-tight text-slate-900">PROXIVA</span>
           </Link>
 
           {/* Center Links (Desktop) */}

@@ -29,7 +29,7 @@ const HelpPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
-      <section className="bg-proxiva-navy text-white pt-16 pb-24 text-center">
+      <section className="bg-slate-900 text-white pt-16 pb-24 text-center">
         <div className="section-container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">How can we help?</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
@@ -46,7 +46,7 @@ const HelpPage = () => {
       <section className="-mt-12 relative z-10 pb-20">
         <div className="section-container max-w-4xl">
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-            <h2 className="text-2xl font-bold text-proxiva-navy mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
             
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -55,7 +55,7 @@ const HelpPage = () => {
                     className="w-full text-left px-6 py-4 bg-slate-50 hover:bg-slate-100 flex justify-between items-center transition-colors"
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   >
-                    <span className="font-semibold text-proxiva-navy">{faq.question}</span>
+                    <span className="font-semibold text-slate-900">{faq.question}</span>
                     <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${openIndex === index ? 'rotate-180' : ''}`} />
                   </button>
                   {openIndex === index && (
