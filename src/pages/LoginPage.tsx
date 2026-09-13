@@ -16,9 +16,24 @@ const LoginPage = () => {
       <div className="max-w-md w-full mx-auto">
         <div className="text-center mb-8">
           <Link to="/" className="flex items-center justify-center space-x-2.5">
-            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-              <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#2563EB"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M11 9H17.5C21.0899 9 24 11.9101 24 15.5C24 19.0899 21.0899 22 17.5 22H11V9ZM14 12V19H17.5C19.433 19 21 17.433 21 15.5C21 13.567 19.433 12 17.5 12H14Z" fill="white"/>
+            <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="proxiva-logo-grad-lp" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#1E40AF" />
+                  <stop offset="50%" stopColor="#2563EB" />
+                  <stop offset="100%" stopColor="#0284C7" />
+                </linearGradient>
+                <linearGradient id="proxiva-swoop-grad-lp" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#38BDF8" />
+                  <stop offset="100%" stopColor="#1D4ED8" />
+                </linearGradient>
+              </defs>
+              <path d="M8 6C8 3.79086 9.79086 2 12 2H26C31.5228 2 36 6.47715 36 12C36 17.5228 31.5228 22 26 22H18V32C18 34.2091 16.2091 36 14 36H12C9.79086 36 8 34.2091 8 32V6Z" fill="url(#proxiva-logo-grad-lp)" />
+              <path d="M8 24C12 24 14 28 18 28C22 28 24 24 28 24" stroke="url(#proxiva-swoop-grad-lp)" strokeWidth="3" strokeLinecap="round" />
+              <g transform="translate(20, 7)">
+                <path d="M6 0C2.68629 0 0 2.68629 0 6C0 10.5 6 15 6 15C6 15 12 10.5 12 6C12 2.68629 9.31371 0 6 0Z" fill="white" />
+                <circle cx="6" cy="5.5" r="2" fill="#1E3A8A" />
+              </g>
             </svg>
             <span className="font-extrabold text-3xl tracking-tight text-slate-900">PROXIVA</span>
           </Link>
